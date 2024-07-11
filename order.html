@@ -51,40 +51,47 @@
         <div class="main-content">
             <b class="roboto-slab" style="font-size: xx-large; flex: none;">Enter your information so we can complete you order:</b>
             
-            <br>
+            <div style="display: flex; flex-direction: row; gap: 50px;">
+                <div style="display: flex; flex-direction: column;">
+                    <input type="text" placeholder="Address">
+                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Contact No.">
+                    <input type="text" placeholder="Email">
+    
+                    <hr>
 
-            <input type="text" placeholder="Address">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Contact No.">
-            <input type="text" placeholder="Email">
-
-            <hr>
-
-            <div id="select" style="display: flex; flex-direction: column; gap: 10px;">
-                <button onclick="removeSelect()">Remove order</button>
-                <button onclick="addSelect()">Add another</button>
-
-                <select>
-                    <option value="">Select your order</option>
-                    <option value="cappuccino">Cappuccino</option>
-                    <option value="latte">Latte</option>
-                    <option value="espresso">Espresso</option>
-                    <option value="americano">Americano</option>
-                    <option value="macchiato">Macchiato</option>
-                    <option value="mocha">Mocha</option>
-                    <option value="affogato">Affogato</option>
-                    <option value="flat-white">Flat White</option>
-                    <option value="iced-coffee">Iced Coffee</option>
-                    <option value="turkish-coffee">Turkish Coffee</option>
-                </select>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <input type="checkbox"><span>Would you like to sign up to our newsletter?</span>
+                    </div>
+                    <hr>
+                    <button onclick="location.href='#order-complete';">Done</button>
+                </div>
+    
+                <div style="display: flex; align-items: center; flex-direction: column; gap: 10px; justify-content: space-between;">
+                    <div id="select" style="display: flex; flex-direction: column; gap: 10px;">
+                        <select>
+                              <option value="">Select your order</option>
+                              <option value="cappuccino">Cappuccino</option>
+                              <option value="latte">Latte</option>
+                              <option value="espresso">Espresso</option>
+                              <option value="americano">Americano</option>
+                              <option value="macchiato">Macchiato</option>
+                              <option value="mocha">Mocha</option>
+                              <option value="affogato">Affogato</option>
+                              <option value="flat-white">Flat White</option>
+                              <option value="iced-coffee">Iced Coffee</option>
+                              <option value="turkish-coffee">Turkish Coffee</option>
+                          </select>
+                    </div>
+          
+                      <br>
+                      
+                      <div style="display: flex; flex-direction: row; gap: 10px;">
+                          <button onclick="addSelect()">Add another</button>
+                          <button onclick="removeSelect()">Remove order</button>
+                      </div>
+                </div>
             </div>
-
-            <hr>
-            <div style="display: flex; flex-direction: row; align-items: center;">
-                <input type="checkbox"><span>Would you like to sign up to our newsletter?</span>
-            </div>
-            <hr>
-            <button onclick="location.href='#order-complete';">Done</button>
         </div>
 
         <div id="order-complete">
@@ -108,7 +115,7 @@
 </div>
 <script>
     let selectNum = 1;
-    const selectLimit = 5;
+    const selectLimit = 4;
 
     function addSelect() {
 
@@ -137,9 +144,11 @@
     }
 
     function removeSelect() {
-        const select = document.getElementById(`${selectNum-1}`)
-        selectNum--
-        select.remove();
+        if (selectNum != 0) {
+            const select = document.getElementById(`${selectNum-1}`)
+            selectNum--
+            select.remove();
+        }
     }
 </script>
 
