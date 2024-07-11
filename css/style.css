@@ -104,7 +104,7 @@ button:active {
     text-align: center; 
     font-family: 'Times New Roman', Times, serif;
     padding: 20px;
-    background: url('../homeimages/banner.png') no-repeat center;
+    background: url('/homeimages/banner.png') no-repeat center;
     background-size: cover;
     height: 100px;
     display: flex;
@@ -118,7 +118,7 @@ button:active {
     text-align: center; 
     font-family: 'Times New Roman', Times, serif;
     padding: 50px;
-    background: url('../homeimages/banner.png') no-repeat center;
+    background: url('/homeimages/banner.png') no-repeat center;
     background-size: cover;
     height: 100px;
     display: flex;
