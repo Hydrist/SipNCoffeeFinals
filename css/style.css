@@ -18,7 +18,7 @@ body, html {
     box-sizing: border-box;
 }
 
-.sidebar-navigation a, a {
+.a {
     font-family: "Roboto Slab", serif;
     font-size: larger;
     margin: 15px 0;
@@ -26,11 +26,11 @@ body, html {
     color: #c6a286;
     display: block;
     transition: all 0.1s ease-in;  
-} .sidebar-navigation a:hover, a:hover {
+} a:hover {
     scale: 95%;
     filter: brightness(80%);
     transition: all 0.1s ease-in;  
-} .sidebar-navigation a:active, a:active {
+} a:active {
     scale: 90%;
     transition: all 0.1s ease-in;  
 }
