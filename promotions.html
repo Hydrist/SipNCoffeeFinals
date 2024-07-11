@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/promotions.css">
     <title>Sip & Coffee</title>
 </head>
 <body>
@@ -48,49 +48,65 @@
                 <button onclick="location.href='order.html';">Order Now</button>
             </div>
         </div>
+
         <div class="main-content">
-            <b class="roboto-slab" style="font-size: xx-large; flex: none;">Enter your information so we can complete you order:</b>
-            
+            <div class="promotions">
+                <div class="promo-image-box">
+                    <img src="promotionsimages/coffeepromo.png" alt="Image 1">
+                    <br><br>
+                    <b class="roboto-slab larger">SipNCoffee x BINIverse Day 1 Concert Promo</b>
+                    <br><br>
+                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;">
+                        <a href="">Learn more</a>
+                        <button onclick="location.href='order.html';">Order Now</button>
+                    </div>
+                </div>
+                <div class="promo-image-box">
+                    <img src="promotionsimages/coffeepromo.png" alt="Image 1">
+                    <br><br>
+                    <b class="roboto-slab larger">SipNCoffee Fun Camp</b>
+                    <br><br>
+                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;">
+                        <a href="">Learn more</a>
+                    </div>
+                </div>
+                <div class="promo-image-box">
+                    <img src="promotionsimages/coffeepromo.png" alt="Image 1">
+                    <br><br>
+                    <b class="roboto-slab larger">SipNCoffee Summer Bundle Promo</b>
+                    <br><br>
+                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;">
+                        <a href="">Learn more</a>
+                        <button onclick="location.href='order.html';">Order Now</button>
+                    </div>
+                </div>
+                <div class="promo-image-box">
+                    <img src="promotionsimages/coffeepromo.png" alt="Image 1">
+                    <br><br>
+                    <b class="roboto-slab larger">SipNCoffee Kids Party</b>
+                    <br><br>
+                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;">
+                        <a href="">Learn more</a>
+                    </div>
+                </div>
+            </div>
+
             <br>
 
-            <input type="text" placeholder="Address">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Contact No.">
-            <input type="text" placeholder="Email">
-
-            <hr>
-
-            <div id="select" style="display: flex; flex-direction: column; gap: 10px;">
-                <button onclick="removeSelect()">Remove order</button>
-                <button onclick="addSelect()">Add another</button>
-
-                <select>
-                    <option value="">Select your order</option>
-                    <option value="cappuccino">Cappuccino</option>
-                    <option value="latte">Latte</option>
-                    <option value="espresso">Espresso</option>
-                    <option value="americano">Americano</option>
-                    <option value="macchiato">Macchiato</option>
-                    <option value="mocha">Mocha</option>
-                    <option value="affogato">Affogato</option>
-                    <option value="flat-white">Flat White</option>
-                    <option value="iced-coffee">Iced Coffee</option>
-                    <option value="turkish-coffee">Turkish Coffee</option>
-                </select>
+            <div style="display: flex; flex-direction: row; align-items: center; gap: 20px; padding-inline: 20px; margin-inline: 100px;">
+                <img src="promotionsimages/coffeepromo.png" alt="">
+                <div>
+                    <b class="roboto-slab larger">SipNCoffee e-Gifts</b>
+                    <p>A digital platform where customers can conveniently send electronic gift codes to family and friends. SipNCoffee e-Gifts are available in the form of e-Product Vouchers and e-Gift Certificates which can be redeemed at any SipNCoffee store.</p>
+                    <p>Send a joyful treat on any special occasion.</p>
+                    <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+                        <button>Buy e-Gift Certificates</button>
+                        <button>Buy e-Product Vouchers</button>
+                    </div>
+                </div>
             </div>
 
-            <hr>
-            <div style="display: flex; flex-direction: row; align-items: center;">
-                <input type="checkbox"><span>Would you like to sign up to our newsletter?</span>
-            </div>
-            <hr>
-            <button onclick="location.href='#order-complete';">Done</button>
-        </div>
-
-        <div id="order-complete">
-            <img src="svg/checkbox-circle-svgrepo-com.svg" alt="Checkmark Image" style="height: 200px; width: 200px;">
-            <p>Your order has been requested, we will send an email regarding your order's status.</p>
-            <button onclick="location.href='#';">Okay</button>
+            <br>
         </div>
 
         <div class="intro-text-area"><br><br>
@@ -106,42 +122,5 @@
         </div>
     </div>
 </div>
-<script>
-    let selectNum = 1;
-    const selectLimit = 5;
-
-    function addSelect() {
-
-        if (selectNum <= selectLimit) {
-            const select = document.querySelector('select');
-            const options = select.querySelectorAll('option');
-            
-            const newSelect = document.createElement('select');
-
-            newSelect.id = `${selectNum}`
-            
-            options.forEach(option => {
-                const newOption = document.createElement('option');
-                newOption.text = option.text;
-                newOption.value = option.value;
-                newSelect.appendChild(newOption);
-            });
-            
-            document.querySelector('#select').appendChild(newSelect);
-            selectNum++
-        } else {
-            const maxSelectInfo = document.createElement('p')
-            maxSelectInfo.text = "Maximum orders exceeded."
-            document.querySelector('#select').appendChild()
-        }
-    }
-
-    function removeSelect() {
-        const select = document.getElementById(`${selectNum-1}`)
-        selectNum--
-        select.remove();
-    }
-</script>
-
 </body>
 </html>     
